@@ -8,7 +8,11 @@ use Illuminate\Support\Facades\DB;
 class DemoController extends Controller
 {
     function Products(){
-       $products = DB::table('products')->find(4);
+    //    $products = DB::table('products')->count();
+    //    $products = DB::table('products')->max('price');
+    //    $products = DB::table('products')->min('price');
+    //    $products = DB::table('products')->avg('price');
+       $products = DB::table('products')->sum('price');
        return $products;
     }
 
@@ -27,6 +31,8 @@ class DemoController extends Controller
         return $profiles;
 
     }
+
+
 
 
 }
