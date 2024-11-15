@@ -42,6 +42,13 @@ class DemoController extends Controller
 
     }
 
+    function InnerJoin(){
+        $products = DB::table('products')
+        ->join('categories', 'products.category_id', '=', 'categories.id')
+        ->join('brands', 'products.brand_id', '=', 'brands.id');
+        return $products->get();
+    }
+
 
 
 
