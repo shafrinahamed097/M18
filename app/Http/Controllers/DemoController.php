@@ -8,12 +8,12 @@ use Illuminate\Support\Facades\DB;
 class DemoController extends Controller
 {
     function Products(){
-       $products = DB::table('products')->get();
+       $products = DB::table('products')->find(4);
        return $products;
     }
 
     function Brands(){
-        $brands = DB::table('brands')->get();
+        $brands = DB::table('brands')->pluck('brandImg',"brandName");
         return $brands;
     }
 

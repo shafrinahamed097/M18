@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get("/shop", [DemoController::class,"Products"]);
+Route::get("/products", [DemoController::class,"Products"]);
 Route::get("/brands", [DemoController::class, "Brands"]);
 Route::get("/categories", [DemoController::class, "Categories"]);
 Route::get("/profiles", [DemoController::class ,"Profiles"]);
