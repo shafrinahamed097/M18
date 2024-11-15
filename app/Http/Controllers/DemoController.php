@@ -12,9 +12,19 @@ class DemoController extends Controller
     //    $products = DB::table('products')->max('price');
     //    $products = DB::table('products')->min('price');
     //    $products = DB::table('products')->avg('price');
-       $products = DB::table('products')->sum('price');
+    //    $products = DB::table('products')->sum('price');
+
+    // $products = DB::table('products')->select('title', 'price', 'stock')->get();
+
+    $products = DB::table('products')->select('title')->distinct()->get();
        return $products;
     }
+
+    /**
+     * Retrieve a list of brand images keyed by brand names from the 'brands' table.
+     *
+     * @return \Illuminate\Support\Collection A collection of brand images with brand names as keys.
+     */
 
     function Brands(){
         $brands = DB::table('brands')->pluck('brandImg',"brandName");
