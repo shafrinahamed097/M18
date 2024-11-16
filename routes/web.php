@@ -22,3 +22,4 @@ Route::get("/profiles", [DemoController::class ,"Profiles"]);
 Route::get("/inner-join", [DemoController::class, "InnerJoin"]);
 Route::get("/left-join", [DemoController::class, "leftJoin"]);
 Route::get("/right-join", [DemoController::class, "RightJoin"]);
+Route::get("/cross-join", [DemoController::class, "CrossJoin"]);

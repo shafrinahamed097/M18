@@ -64,6 +64,13 @@ class DemoController extends Controller
         return $products->get();
     }
 
+    function CrossJoin(){
+        $products = DB::table("products")
+        ->crossJoin("brands")->get();
+
+        return $products;
+    }
+
 
 
 }
