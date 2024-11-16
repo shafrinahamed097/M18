@@ -49,6 +49,20 @@ class DemoController extends Controller
         return $products->get();
     }
 
+    function leftJoin(){
+        $products = DB::table('products')
+                  ->leftJoin('categories', 'products.category_id','=','categories.id')
+                  ->leftJoin('brands', 'products.brand_id','=','brands.id');
+        return $products->get();
+    }
+
+
+    function RightJoin(){
+        $products = DB::table('products')
+        ->rightJoin("categories", "products.category_id", "=", "categories.id")
+        ->rightJoin("brands", "products.brand_id", "=", "brands.id");
+        return $products->get();
+    }
 
 
 

@@ -20,3 +20,5 @@ Route::get("/brands", [DemoController::class, "Brands"]);
 Route::get("/categories", [DemoController::class, "Categories"]);
 Route::get("/profiles", [DemoController::class ,"Profiles"]);
 Route::get("/inner-join", [DemoController::class, "InnerJoin"]);
+Route::get("/left-join", [DemoController::class, "leftJoin"]);
+Route::get("/right-join", [DemoController::class, "RightJoin"]);
