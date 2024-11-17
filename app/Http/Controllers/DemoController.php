@@ -119,4 +119,49 @@ class DemoController extends Controller
         ->whereNotBetween('price', [3000,5000])->get();
         return $products;
     }
+
+    function whereNull(){
+        $products = DB::table('products')->whereNull('price')->get();
+        return $products;
+    }
+
+    function whereNotNull(){
+        $products = DB::table('products')->whereNotNull('price')->get();
+        return $products;
+    }
+
+    function whereDate(){
+        $products = DB::table('products')->whereDate('updated_at', '2024-11-15')->get();
+        return $products;
+    }
+
+    function whereMonth(){
+        $products = DB::table('products')->whereMonth('updated_at', '11')->get();
+        return $products;
+    }
+
+    function whereDay(){
+        $products = DB::table('products')->whereDay('updated_at', '15')->get();
+        return $products;
+    }
+
+    function whereYear(){
+        $products = DB::table('products')->whereYear('updated_at', '2024')->get();
+        return $products;
+    }
+
+    function whereTime(){
+        $products = DB::table('products')->whereTime('updated_at', '>','12:00:00')->get();
+        return $products;
+    }
+
+     function whereIn(){
+        $products = DB::table('products')->whereIn('price', [20,5000])->get();
+        return $products;
+     }
+
+     function whereNotIn(){
+        $products = DB::table('products')->whereNotIn('price', [20,5000])->get();
+        return $products;
+     }
 }
