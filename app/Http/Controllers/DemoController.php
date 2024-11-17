@@ -216,6 +216,22 @@ class DemoController extends Controller
       }
 
 
+      /*
+      Insert Statement
+       - Insert method used to insert records into the database table.
+       - The insert method accepts an array of columns names and values.
+       */
+
+       function Insert(){
+        $brands = DB::table('brands')->insert([
+            'brandName'=>'Lenovo',
+            'brandImg'=>'lenovo Img'
+        ]);
+       }
+
+
+      
+
 
 
 

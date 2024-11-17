@@ -46,6 +46,7 @@ Route::get("/oldestData", [DemoController::class, "oldestData"]);
 Route::get("/skipTake", [DemoController::class, "skipTake"]);
 Route::get("/groupBy", [DemoController::class, "groupBy"]);
 Route::get("/groupByHaving", [DemoController::class, "groupByHaving"]);
+Route::get("/Insert", [DemoController::class, "Insert"]);
 
 
 
