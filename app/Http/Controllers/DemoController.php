@@ -222,12 +222,32 @@ class DemoController extends Controller
        - The insert method accepts an array of columns names and values.
        */
 
-       function Insert(){
-        $brands = DB::table('brands')->insert([
-            'brandName'=>'Lenovo',
-            'brandImg'=>'lenovo Img'
-        ]);
+
+      function Insert(Request $request){
+        $brands = DB::table('brands')->insert($request->input());
+
+        return $brands;
        }
+
+    //    function Update(){
+    //     $products = DB::table('products')
+    //     ->where('id',1)
+    //     ->update(['price' => 5000]);
+
+    //     return $products;
+    //    }
+
+    function Update(Request $request){
+        $brands = DB::table('brands')
+        ->where('id','=',$request->id)
+        ->update($request->input() );
+   
+            
+
+
+        return $brands;
+
+    }
 
 
       
