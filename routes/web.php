@@ -38,3 +38,7 @@ Route::get("/whereYear", [DemoController::class, "whereYear"]);
 Route::get("/whereTime", [DemoController::class, "whereTime"]);
 Route::get("/whereIn", [DemoController::class, "whereIn"]);
 Route::get("/whereNotIn", [DemoController::class, "whereNotIn"]);
+Route::get("/whereColumn", [DemoController::class, "whereColumn"]);
+
+
+

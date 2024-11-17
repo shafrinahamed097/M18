@@ -164,4 +164,11 @@ class DemoController extends Controller
         $products = DB::table('products')->whereNotIn('price', [20,5000])->get();
         return $products;
      }
+
+     function whereColumn(){
+         $products = DB::table('products')->whereColumn('updated_at', '>', 'created_at')->get();
+         return $products;
+     }
+
+     
 }
