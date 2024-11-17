@@ -286,6 +286,20 @@ class DemoController extends Controller
    }
 
 
+   /*
+   Delete Statement: The query builder's delete method may be used to delete records from the table truncate an entire table use the truncate method.
+
+   */
+  
+     function Delete(Request $request){
+        $brands = DB::table('brands')
+        ->where('id', $request->id)
+        ->delete();
+        return $brands;
+     }
+
+
+
     
 
 }

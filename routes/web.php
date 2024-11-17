@@ -50,6 +50,7 @@ Route::post("/update/{id}", [DemoController::class, "Update"]);
 Route::post("/upsert/{brandName}", [DemoController::class, "UpdateOrInsert"]);
 Route::post("/increment/{id}", [DemoController::class, "Increment"]);
 Route::post("/decrement/{id}", [DemoController::class, "Decrement"]);
+Route::post("/delete/{id}", [DemoController::class, "Delete"]);
 
 
 
