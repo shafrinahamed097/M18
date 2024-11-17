@@ -82,7 +82,13 @@ class DemoController extends Controller
             $join->on('products.brand_id', '=', 'brands.id')
             ->where('brands.brandName', '=', 'Easy');
 
-        });
-        return $products->get();
+        })->get();
+        return $products;
+    }
+
+    function Unions(){
+        $query = DB::table('products')->where('price', '>', 2000);
+        $otherQuery = DB::table('products')->where('category_id', '=', 3)->union($query)->get();
+        return $otherQuery;
     }
 }
