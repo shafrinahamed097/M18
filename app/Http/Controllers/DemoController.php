@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Database\Query\JoinClause;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -27,7 +28,7 @@ class DemoController extends Controller
      */
 
     function Brands(){
-        $brands = DB::table('brands')->pluck('brandImg',"brandName");
+        $brands = DB::table('brands')->pluck('brandImg','brandName');
         return $brands;
     }
 
@@ -59,18 +60,29 @@ class DemoController extends Controller
 
     function RightJoin(){
         $products = DB::table('products')
-        ->rightJoin("categories", "products.category_id", "=", "categories.id")
-        ->rightJoin("brands", "products.brand_id", "=", "brands.id");
+        ->rightJoin('categories', 'products.category_id', '=', 'categories.id')
+        ->rightJoin('brands', 'products.brand_id', '=', 'brands.id');
         return $products->get();
     }
 
     function CrossJoin(){
-        $products = DB::table("products")
-        ->crossJoin("brands")->get();
+        $products = DB::table('products')
+        ->crossJoin('brands')->get();
 
         return $products;
     }
 
+    function AdvancedJoinClauses(){
+        $products = DB::table('products')
+        ->join('categories', function (JoinClause $join){
+            $join->on('products.category_id', '=', 'categories.id')
+            ->where('products.price', '>', 2000);
+        })
+        ->join('brands', function (JoinClause $join){
+            $join->on('products.brand_id', '=', 'brands.id')
+            ->where('brands.brandName', '=', 'Easy');
 
-
+        });
+        return $products->get();
+    }
 }
