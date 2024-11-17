@@ -25,3 +25,7 @@ Route::get("/right-join", [DemoController::class, "RightJoin"]);
 Route::get("/cross-join", [DemoController::class, "CrossJoin"]);
 Route::get("/advanced-join", [DemoController::class, "AdvancedJoinClauses"]);
 Route::get("/unions", [DemoController::class, "Unions"]);
+Route::get("/orWhere", [DemoController::class, "orWhere"]);
+Route::get("/whereNot", [DemoController::class, "whereNot"]);
+Route::get("/whereBetween", [DemoController::class, "whereBetween"]);
+Route::get("/whereNotBetween", [DemoController::class, "whereNotBetween"]);

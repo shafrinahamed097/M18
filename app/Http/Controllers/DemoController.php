@@ -88,7 +88,35 @@ class DemoController extends Controller
 
     function Unions(){
         $query = DB::table('products')->where('price', '>', 2000);
-        $otherQuery = DB::table('products')->where('category_id', '=', 3)->union($query)->get();
+        $otherQuery = DB::table('products')->where('products.discount', '=', 1)->union($query)->get();
         return $otherQuery;
+    }
+
+
+    // Advanced Where
+    function orWhere(){
+        $products = DB::table('products')
+        ->where('products.price', '>', 2000)
+        ->orWhere('products.price', '=', 20)->get();
+        return $products;
+    }
+
+    function whereNot(){
+        $products = DB::table('products')
+        ->where('products.price', '>', 2000)
+        ->whereNot('products.price', '=', 200)->get();
+        return $products;
+    }
+
+    function whereBetween(){
+        $products = DB::table('products')
+        ->whereBetween('price', [3000,5000])->get();
+        return $products;
+    }
+
+    function whereNotBetween(){
+        $products = DB::table('products')
+        ->whereNotBetween('price', [3000,5000])->get();
+        return $products;
     }
 }
