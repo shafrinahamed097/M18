@@ -249,6 +249,23 @@ class DemoController extends Controller
 
     }
 
+    /*
+    Update or Insert Statements:
+      UpdateOrInsert method may be used to update an existing record in the database or create it if no matching record exists.
+    */
+
+    function UpdateOrInsert(Request $request){
+        $brands = DB::table('brands')
+        ->updateOrInsert(
+            ['brandName'=>$request->brandName],
+            $request->input()
+          
+    );
+    return $brands;
+    }
+
+   
+
 
       
 

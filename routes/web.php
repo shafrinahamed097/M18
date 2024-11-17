@@ -47,6 +47,7 @@ Route::get("/skipTake", [DemoController::class, "skipTake"]);
 Route::get("/groupBy", [DemoController::class, "groupBy"]);
 Route::get("/groupByHaving", [DemoController::class, "groupByHaving"]);
 Route::post("/update/{id}", [DemoController::class, "Update"]);
+Route::post("/upsert/{brandName}", [DemoController::class, "UpdateOrInsert"]);
 
 
 
