@@ -264,6 +264,32 @@ class DemoController extends Controller
     return $brands;
     }
 
+    /*
+    Increment & Decrement: The query builder also provides convenient methods for incrementing or decrementing the value of a given column.
+    */
+
+
+   function Increment(Request $request){
+       $products=DB::table('products')
+       ->where('id', $request->id)
+       ->increment('price', 10);
+
+       return $products;
+   }
+
+   function Decrement(Request $request){
+    $products=DB::table('products')
+    ->where('id', $request->id)
+    ->decrement('price', 10);
+
+    return $products;
+   }
+
+
+    
+
+}
+
    
 
 
@@ -275,4 +301,4 @@ class DemoController extends Controller
      
 
      
-}
+
