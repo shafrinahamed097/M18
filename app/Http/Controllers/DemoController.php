@@ -205,6 +205,16 @@ class DemoController extends Controller
         return $products;
       }
 
+      function groupBy(){
+        $products = DB::table('products')->groupBy('title')->get();
+        return $products;
+      }
+
+      function groupByHaving(){
+        $products = DB::table('products')->groupBy('title')->having('price', '>', 1000)->get();
+        return $products;
+      }
+
 
 
 
