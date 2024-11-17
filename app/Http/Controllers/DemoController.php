@@ -170,5 +170,46 @@ class DemoController extends Controller
          return $products;
      }
 
+
+     /*
+      Ordering, Grouping,Limit"
+        - The order by method allows you to sort the results of a query by one or more columns.
+        - The latest and oldest methods allow you to easily order results by date.
+        - The inRandomOrder method may be used to sort the query results randomly.
+        - The groupBy and having methods may be used to group the query results.
+        - The skip and take methods to limit the number of results returned from the query or to skip a given number of results in the query.
+      */
+
+      function orderBy(){
+        $brands = DB::table('brands')->orderBy('brandName', 'desc')->get();
+        return $brands;
+      }
+
+      function inRandom(){
+        $brands = DB::table('brands')->inRandomOrder()->get();
+        return $brands;
+      }
+
+      function latestData(){
+        $brands = DB::table('brands')->latest()->get();
+        return $brands;
+      }
+
+      function oldestData(){
+        $brands = DB::table('brands')->oldest()->get();
+        return $brands;
+      }
+
+      function skipTake(){
+        $products = DB::table('products')->skip(2)->take(2)->get();
+        return $products;
+      }
+
+
+
+
+
+     
+
      
 }

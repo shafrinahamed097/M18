@@ -39,6 +39,11 @@ Route::get("/whereTime", [DemoController::class, "whereTime"]);
 Route::get("/whereIn", [DemoController::class, "whereIn"]);
 Route::get("/whereNotIn", [DemoController::class, "whereNotIn"]);
 Route::get("/whereColumn", [DemoController::class, "whereColumn"]);
+Route::get("/orderBy", [DemoController::class, "orderBy"]);
+Route::get("/inRandom", [DemoController::class, "inRandom"]);
+Route::get("/latestData", [DemoController::class, "latestData"]);
+Route::get("/oldestData", [DemoController::class, "oldestData"]);
+Route::get("/skipTake", [DemoController::class, "skipTake"]);
 
 
 
